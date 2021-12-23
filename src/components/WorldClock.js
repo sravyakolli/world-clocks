@@ -21,9 +21,9 @@ function WorldClock({ time, onClick }) {
             {/* <Moment format="HH:mm:ss" interval={1000} tz={time.zone} /> */}
             <span>{`${hours} : ${minutes} : ${seconds}`}</span>
             <div className="circle">
-                <div className="hours" ></div>
-                <div className="minutes"></div>
-                <div className="seconds"></div>
+                <div className="hours" style={{ 'transform': `rotate(${hours > 12 ? 30 * (hours - 12) : 30 * hours}deg)` }}></div>
+                <div className="minutes" style={{ 'transform': `rotate(${6 * minutes}deg)` }}></div>
+                <div className="seconds" style={{ 'transform': `rotate(${6 * seconds}deg)` }}></div>
             </div>
             <label>{time.zone}</label>
         </div>
